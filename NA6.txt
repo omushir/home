@@ -1,0 +1,21 @@
+6.Random Forest
+
+
+What is the Random Forest Algorithm?
+Random Forest is a technique that uses ensemble learning, that combines many weak classifiers to provide solutions to complex problems.
+
+As the name suggests random forest consists of many decision trees. Rather than depending on one tree it takes the prediction from each tree and based on the majority votes of predictions, predicts the final output. Don’t worry if you haven’t read about decision trees, I have that part covered in this article.
+
+
+
+###
+Difference between Decision Tree and Random Forest
+Decision Trees
+
+Random Forests
+
+1. Decision trees normally suffer from the problem of overfitting if it’s allowed to grow till its maximum depth.	1. Random forests use the bagging method. It creates a subset of the original dataset, and the final output is based on majority ranking and hence the problem of overfitting is taken care of.
+2. A single decision tree is faster in computation.	2. It is comparatively slower.
+3. When a data set with features is taken as input by a decision tree it will formulate some set of rules to do prediction.	3. Random forest randomly selects observations, builds a decision tree and the average result is taken. It doesn’t use any set of formulas.
+Hence, we can come to a conclusion that random forests are much more successful than decision trees only if the trees are diverse and acceptable.
+

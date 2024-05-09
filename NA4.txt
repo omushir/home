@@ -1,0 +1,32 @@
+4.Naive Bayes
+
+
+###What is Naive Bayes Classifier?
+Naive Bayes is a statistical classification technique based on Bayes Theorem. It is one of the simplest supervised learning algorithms. Naive Bayes classifier is the fast, accurate and reliable algorithm. Naive Bayes classifiers have high accuracy and speed on large datasets.
+
+Naive Bayes classifier assumes that the effect of a particular feature in a class is independent of other features. For example, a loan applicant is desirable or not depending on his/her income, previous loan and transaction history, age, and location. Even if these features are interdependent, these features are still considered independently. This assumption simplifies computation, and that's why it is considered as naive. This assumption is called class conditional independence.
+
+What is Naive Bayes Classifier?
+P(h): the probability of hypothesis h being true (regardless of the data). This is known as the prior probability of h.
+P(D): the probability of the data (regardless of the hypothesis). This is known as the prior probability.
+P(h|D): the probability of hypothesis h given the data D. This is known as posterior probability.
+P(D|h): the probability of data d given that the hypothesis h was true. This is known as posterior probability.
+How Naive Bayes Classifier Works?
+Let’s understand the working of Naive Bayes through an example. Given an example of weather conditions and playing sports. You need to calculate the probability of playing sports. Now, you need to classify whether players will play or not, based on the weather condition.
+
+First Approach (In case of a single feature)
+Naive Bayes classifier calculates the probability of an event in the following steps:
+
+Step 1: Calculate the prior probability for given class labels
+Step 2: Find Likelihood probability with each attribute for each class
+Step 3: Put these value in Bayes Formula and calculate posterior probability.
+Step 4: See which class has a higher probability, given the input belongs to the higher probability class.
+
+
+
+
+###
+The Gaussian curve, also known as the normal distribution or bell curve, is a fundamental concept in statistics and probability theory. It describes a symmetrical, bell-shaped curve that emerges when plotting continuous data that follows a particular pattern.
+
+In a Gaussian curve, the highest point of the curve represents the mean (average) of the data, and the curve is symmetrically distributed around this mean. The spread of the curve is determined by the standard deviation, which measures the amount of variation or dispersion from the mean.
+

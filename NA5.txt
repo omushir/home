@@ -1,0 +1,57 @@
+5.Decision Tree
+
+
+The Decision Tree Algorithm
+A decision tree is a flowchart-like tree structure where an internal node represents a feature(or attribute), the branch represents a decision rule, and each leaf node represents the outcome.
+
+The topmost node in a decision tree is known as the root node. It learns to partition on the basis of the attribute value. It partitions the tree in a recursive manner called recursive partitioning. This flowchart-like structure helps you in decision-making. It's visualization like a flowchart diagram which easily mimics the human level thinking. That is why decision trees are easy to understand and interpret.
+
+
+
+####
+Attribute Selection Measures
+Attribute selection measure is a heuristic for selecting the splitting criterion that partitions data in the best possible manner. It is also known as splitting rules because it helps us to determine breakpoints for tuples on a given node. ASM provides a rank to each feature (or attribute) by explaining the given dataset. The best score attribute will be selected as a splitting attribute (Source). In the case of a continuous-valued attribute, split points for branches also need to define. The most popular selection measures are Information Gain, Gain Ratio, and Gini Index.
+
+Information Gain
+Claude Shannon invented the concept of entropy, which measures the impurity of the input set. In physics and mathematics, entropy is referred to as the randomness or the impurity in a system. In information theory, it refers to the impurity in a group of examples. Information gain is the decrease in entropy. Information gain computes the difference between entropy before the split and average entropy after the split of the dataset based on given attribute values. ID3 (Iterative Dichotomiser) decision tree algorithm uses information gain.
+
+information gain
+Where Pi is the probability that an arbitrary tuple in D belongs to class Ci.
+
+information gain
+information gain
+Where:
+
+Info(D) is the average amount of information needed to identify the class label of a tuple in D.
+|Dj|/|D| acts as the weight of the jth partition.
+InfoA(D) is the expected information required to classify a tuple from D based on the partitioning by A.
+The attribute A with the highest information gain, Gain(A), is chosen as the splitting attribute at node N().
+
+Gain Ratio
+Information gain is biased for the attribute with many outcomes. It means it prefers the attribute with a large number of distinct values. For instance, consider an attribute with a unique identifier, such as customer_ID, that has zero info(D) because of pure partition. This maximizes the information gain and creates useless partitioning.
+
+C4.5, an improvement of ID3, uses an extension to information gain known as the gain ratio. Gain ratio handles the issue of bias by normalizing the information gain using Split Info. Java implementation of the C4.5 algorithm is known as J48, which is available in WEKA data mining tool.
+
+Gain Ratio
+Where:
+
+|Dj|/|D| acts as the weight of the jth partition.
+v is the number of discrete values in attribute A.
+The gain ratio can be defined as
+
+Gain Ratio
+The attribute with the highest gain ratio is chosen as the splitting attribute (Source).
+
+Gini index
+Another decision tree algorithm CART (Classification and Regression Tree) uses the Gini method to create split points.
+
+Gini index
+Where pi is the probability that a tuple in D belongs to class Ci.
+
+The Gini Index considers a binary split for each attribute. You can compute a weighted sum of the impurity of each partition. If a binary split on attribute A partitions data D into D1 and D2, the Gini index of D is:
+
+Gini index
+In the case of a discrete-valued attribute, the subset that gives the minimum gini index for that chosen is selected as a splitting attribute. In the case of continuous-valued attributes, the strategy is to select each pair of adjacent values as a possible split point, and a point with a smaller gini index is chosen as the splitting point.
+
+gini index
+The attribute with the minimum Gini index is chosen as the splitting attribute.

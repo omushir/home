@@ -1,0 +1,94 @@
+3.LOGISTIC REGRESSION
+
+###What is Logistic Regression?
+Logistic regression is a statistical method for predicting binary classes. The outcome or target variable is dichotomous in nature. Dichotomous means there are only two possible classes. For example, it can be used for cancer detection problems. It computes the probability of an event occurrence.
+
+It is a special case of linear regression where the target variable is categorical in nature. It uses a log of odds as the dependent variable. Logistic Regression predicts the probability of occurrence of a binary event utilizing a logit function.
+
+##
+Linear Regression Equation:
+
+eq1
+
+Where, y is a dependent variable and x1, x2 ... and Xn are explanatory variables.
+
+Sigmoid Function:
+
+eq2
+
+Apply Sigmoid function on linear regression:
+
+eq3
+
+Properties of Logistic Regression:
+
+The dependent variable in logistic regression follows Bernoulli Distribution.
+Estimation is done through maximum likelihood.
+No R Square, Model fitness is calculated through Concordance, KS-Statistics.
+
+
+###Linear Regression Vs. Logistic Regression
+Linear regression gives you a continuous output, but logistic regression provides a constant output. An example of the continuous output is house price and stock price. Example's of the discrete output is predicting whether a patient has cancer or not, predicting whether the customer will churn. Linear regression is estimated using Ordinary Least Squares (OLS) while logistic regression is estimated using Maximum Likelihood Estimation (MLE) approach.
+
+###
+Sigmoid Function
+The sigmoid function, also called logistic function gives an ‘S’ shaped curve that can take any real-valued number and map it into a value between 0 and 1. If the curve goes to positive infinity, y predicted will become 1, and if the curve goes to negative infinity, y predicted will become 0. If the output of the sigmoid function is more than 0.5, we can classify the outcome as 1 or YES, and if it is less than 0.5, we can classify it as 0 or NO. The outputcannotFor example: If the output is 0.75, we can say in terms of probability as: There is a 75 percent chance that a patient will suffer from cancer.
+
+
+Types of Logistic Regression:
+
+1.Binary Logistic Regression: The target variable has only two possible outcomes such as Spam or Not Spam, Cancer or No Cancer.
+2.Multinomial Logistic Regression: The target variable has three or more nominal categories such as predicting the type of Wine.
+3.Ordinal Logistic Regression: the target variable has three or more ordinal categories such as restaurant or product rating from 1 to 5.
+
+Precision: Precision is the ratio of true positive predictions to the total number of positive predictions made by the model. It measures the accuracy of positive predictions. Precision is calculated using the formula:
+Precision
+=
+True Positives
+True Positives
++
+False Positives
+Precision= 
+True Positives+False Positives
+True Positives
+​
+ 
+Recall: Recall, also known as sensitivity or true positive rate, measures the ability of the model to correctly identify positive instances from all actual positive instances. It is calculated using the formula:
+Recall
+=
+True Positives
+True Positives
++
+False Negatives
+Recall= 
+True Positives+False Negatives
+True Positives
+​
+ 
+F1 Score: F1 score is the harmonic mean of precision and recall. It provides a balance between precision and recall. F1 score is calculated using the formula:
+F1 Score
+=
+2
+×
+Precision
+×
+Recall
+Precision
++
+Recall
+F1 Score=2× 
+Precision+Recall
+Precision×Recall
+​
+ 
+Accuracy: Accuracy measures the overall correctness of the model's predictions. It is the ratio of correct predictions to the total number of predictions. Accuracy is calculated using the formula:
+Accuracy
+=
+True Positives
++
+True Negatives
+Total Number of Samples
+Accuracy= 
+Total Number of Samples
+True Positives+True Negatives
+​
