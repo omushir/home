@@ -88,3 +88,40 @@ for doc in tfidf_corpus:
 print("\nReadable TF-IDF:")
 for doc in tfidf_corpus:
     print([[g_dict1[id], tfidf_value] for id, tfidf_value in doc])
+
+
+//////////////////////
+import gensim
+from gensim import corpora
+from gensim.utils import simple_preprocess
+from gensim import models
+from gensim.models import TfidfModel
+import numpy as np
+
+# Input Text
+text1 = ["I love programming. CPP is my favorite programming language. Programming helps to solve the real-world problems."]
+
+# Tokenization
+tokens1 = [simple_preprocess(line) for line in text1]
+
+# Create Dictionary
+g_dict1 = corpora.Dictionary(tokens1)
+print(f"The dictionary has {len(g_dict1)} unique tokens:\n")
+print("Token-to-ID Mapping:", g_dict1.token2id)
+
+# Create Bag of Words (BoW)
+g_bow = [g_dict1.doc2bow(token) for token in tokens1]
+print("\nBag of Words Representation:")
+for item in g_bow:
+    print([[g_dict1[id], freq] for id, freq in item])
+
+# Create TF-IDF Model
+g_tfidf = models.TfidfModel(g_bow, smartirs='ntc')
+print("\nTF-IDF Vector:")
+for item in g_tfidf[g_bow]:
+    print([[g_dict1[id], np.around(freq, decimals=2)] for id, freq in item])
+
+
+
+
+
