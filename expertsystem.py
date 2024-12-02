@@ -48,3 +48,67 @@ expert_system.ask_symptoms()
 
 # Diagnose the disease
 expert_system.diagnose()
+
+
+////////////
+
+class ExpertSystem:
+    def _init_(self):
+        # Knowledge base: Diseases and their associated symptoms
+        self.diseases = {
+            "Flu": ["fever", "cough", "muscle aches", "fatigue"],
+            "Cold": ["runny nose", "sneezing", "sore throat", "cough"],
+            "Covid-19": ["fever", "cough", "shortness of breath", "loss of taste", "fatigue"],
+            "Allergy": ["sneezing", "runny nose", "itchy eyes", "rash"]
+        }
+        self.user_symptoms = []
+
+    def ask_questions(self):
+        # Prompt the user for symptoms
+        print("Answer the following questions with 'yes' or 'no':")
+        symptom_list = {
+            "fever": "Do you have a fever?",
+            "cough": "Do you have a cough?",
+            "muscle aches": "Do you have muscle aches?",
+            "fatigue": "Do you feel fatigued or tired?",
+            "runny nose": "Do you have a runny nose?",
+            "sneezing": "Do you have sneezing?",
+            "sore throat": "Do you have a sore throat?",
+            "shortness of breath": "Do you have shortness of breath?",
+            "loss of taste": "Do you have loss of taste or smell?",
+            "itchy eyes": "Do you have itchy eyes?",
+            "rash": "Do you have a rash?"
+        }
+        for symptom, question in symptom_list.items():
+            answer = input(question + " ").strip().lower()
+            if answer == 'yes':
+                self.user_symptoms.append(symptom)
+
+    def diagnose(self):
+        # Determine potential diseases based on symptoms
+        print("\nAnalyzing your symptoms...\n")
+        potential_diseases = []
+
+        for disease, symptoms in self.diseases.items():
+            if any(symptom in self.user_symptoms for symptom in symptoms):
+                potential_diseases.append(disease)
+
+        # Display results
+        if potential_diseases:
+            print("Based on your symptoms, you might have:")
+            for disease in potential_diseases:
+                print(f"- {disease}")
+        else:
+            print("No matching conditions were found. Consider consulting a medical professional.")
+
+    def run(self):
+        # Start the expert system
+        print("Welcome to the Medical Diagnosis Expert System!")
+        self.ask_questions()
+        self.diagnose()
+
+
+# Run the expert system
+if _name_ == "_main_":
+    expert_system = ExpertSystem()
+    expert_system.run()
